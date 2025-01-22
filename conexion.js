@@ -4,7 +4,7 @@ const connectionString = process.env.DATABASE_URL;
 
 const db = pgp({
   ssl: {
-    rejectUnauthorized: true 
+    rejectUnauthorized: false 
   }
 })(connectionString);
 
