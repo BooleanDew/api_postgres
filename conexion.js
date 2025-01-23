@@ -1,12 +1,11 @@
-import pgp from 'pg-promise';
+import pgPromise from 'pg-promise';
 
-const connectionString = process.env.DATABASE_URL;
+const connectionString = process.env.DATABASE_URL; 
 
-const db = pgp({
-  ssl: {
-    rejectUnauthorized: false 
-  }
-})(connectionString);
+
+const pgp = pgPromise({}); 
+const db = pgp(connectionString);
+
 
 export async function datos() {
   return await db.query("select * from usuarios")
