@@ -7,7 +7,7 @@ const db = pgp(connectionString);
 
 
 export async function datos() {
-  return await db.query("select * from chats")
+  return await db.query("select * from usuarios")
     .then((data) => data)
     .catch((error) => error);
 }
