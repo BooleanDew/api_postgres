@@ -1,13 +1,12 @@
 import pgPromise from 'pg-promise';
 
 
-const initOptions = {
-  ssl:{
-    rejectUnauthorized: true
-  }
-};
 
-const pgp = pgPromise(initOptions); 
+const pgp = pgPromise({
+  ssl:{
+    rejectUnauthorized: false
+  }
+}); 
 const connectionString = process.env.DATABASE_URL; 
 const db = pgp(connectionString);
 
