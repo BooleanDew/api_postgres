@@ -1,7 +1,7 @@
 import express from 'express'
 import { datos } from './conexion.js'
 var app = express()
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0"
+//process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0"
 app.get("/listar",(req,res)=>{
     datos().then((datos)=>{
         res.send(datos)
